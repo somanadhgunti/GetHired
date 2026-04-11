@@ -22,3 +22,8 @@ class Config:
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
     GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
     AI_PROVIDER: str = os.getenv("AI_PROVIDER", "gemini")  # "gemini" | "groq"
+    
+    # Models
+    GEMINI_FLASH_MODEL: str = os.getenv("GEMINI_FLASH_MODEL", "gemini-1.5-flash")
+    GEMINI_PRO_MODEL: str = os.getenv("GEMINI_PRO_MODEL", "gemini-1.5-pro")
+    GROQ_MODEL: str = os.getenv("GROQ_MODEL", "llama-3-8b-8192")
