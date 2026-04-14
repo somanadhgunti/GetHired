@@ -63,6 +63,7 @@ def list_workers():
     }
     workers = worker_service.list_all(filters)
     return success({"workers": workers, "count": len(workers)})
+<<<<<<< HEAD
 
 
 @role_required("worker")
@@ -93,3 +94,5 @@ def unsave_job(job_id: str):
     except ValueError as e:
         return error(str(e), 400)
     return success(result)
+=======
+>>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b

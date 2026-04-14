@@ -70,9 +70,12 @@ def apply_individual(worker_id: str, data: dict) -> dict:
     db  = get_db()
     job = _get_job_or_raise(db, data.get("job_id", ""))
 
+<<<<<<< HEAD
     if not data.get("resume_file_name"):
         raise ValueError("Resume PDF is required for application.")
 
+=======
+>>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b
     woid = ObjectId(worker_id)
     _duplicate_check(db, job["_id"], [woid])
 
@@ -193,6 +196,7 @@ def get_for_job(job_id: str, employer_id: str) -> list:
     return [serialize_application(d) for d in docs]
 
 
+<<<<<<< HEAD
 def get_resume_file_name(application_id: str, user_id: str) -> str:
     """Return resume file name for an application if caller has access."""
     db = get_db()
@@ -219,6 +223,8 @@ def get_resume_file_name(application_id: str, user_id: str) -> str:
     return resume_file_name
 
 
+=======
+>>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b
 # ── Status management ─────────────────────────────────────────────────────────
 
 def update_status(application_id: str, employer_id: str, status: str) -> dict:

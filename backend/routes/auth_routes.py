@@ -25,6 +25,7 @@ def refresh():
 def logout():
     from controllers.auth_controller import logout_user
     return logout_user()
+<<<<<<< HEAD
 
 
 # GET /api/v1/auth/me
@@ -39,3 +40,5 @@ def get_me():
 def patch_me():
     from controllers.auth_controller import update_me
     return update_me()
+=======
+>>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b

@@ -34,7 +34,10 @@ def build_individual_application(worker_id: ObjectId, job_id: ObjectId, data: di
         "group_id":         None,
         "worker_ids":       [],                 # empty for individual
         "cover_letter":     data.get("cover_letter", ""),
+<<<<<<< HEAD
         "resume_file_name": data.get("resume_file_name", ""),
+=======
+>>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b
         "resume_url":       data.get("resume_url", ""),
         "status":           "pending",
         "ai_score":         None,               # filled by AI service
@@ -59,7 +62,10 @@ def build_group_application(
         "group_id":         group_id,           # ref → groups._id
         "worker_ids":       worker_ids,         # list[ObjectId] selected workers
         "cover_letter":     data.get("cover_letter", ""),
+<<<<<<< HEAD
         "resume_file_name": "",                # N/A for group
+=======
+>>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b
         "resume_url":       "",                 # N/A for group; individual resumes on profiles
         "status":           "pending",
         "ai_score":         None,
@@ -71,6 +77,7 @@ def build_group_application(
 
 def serialize_application(doc: dict) -> dict:
     """Convert application document to JSON-safe dict."""
+<<<<<<< HEAD
     app_id = str(doc["_id"])
     resume_url = doc.get("resume_url", "")
     if doc.get("resume_file_name"):
@@ -78,13 +85,21 @@ def serialize_application(doc: dict) -> dict:
 
     return {
         "id":               app_id,
+=======
+    return {
+        "id":               str(doc["_id"]),
+>>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b
         "job_id":           str(doc["job_id"]),
         "application_type": doc.get("application_type"),
         "applicant_id":     str(doc["applicant_id"]),
         "group_id":         str(doc["group_id"]) if doc.get("group_id") else None,
         "worker_ids":       [str(wid) for wid in doc.get("worker_ids", [])],
         "cover_letter":     doc.get("cover_letter"),
+<<<<<<< HEAD
         "resume_url":       resume_url,
+=======
+        "resume_url":       doc.get("resume_url"),
+>>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b
         "status":           doc.get("status"),
         "ai_score":         doc.get("ai_score"),
         "employer_notes":   doc.get("employer_notes"),

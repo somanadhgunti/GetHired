@@ -19,8 +19,11 @@ def create_job(employer_id: str, data: dict) -> dict:
         raise ValueError("Job title is required.")
     if not data.get("description", "").strip():
         raise ValueError("Job description is required.")
+<<<<<<< HEAD
     if data.get("status") and data["status"] not in JOB_STATUSES:
         raise ValueError(f"Invalid status. Must be one of: {', '.join(JOB_STATUSES)}")
+=======
+>>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b
 
     oid    = ObjectId(employer_id)
     doc    = build_job(oid, data)
