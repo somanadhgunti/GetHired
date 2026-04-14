@@ -1,0 +1,52 @@
+/* Color Variables and Base Styles */
+
+:root {
+  --bg: #eef2f7;
+  --ink: #1d3557;
+  --ink-strong: #0f2442;
+  --surface: #ffffff;
+  --line: #d8e0ea;
+  --line-strong: #b9c8db;
+  --muted: #667a95;
+  --accent: #7fc241;
+  --accent-strong: #6cad31;
+  --accent-soft: #eef8e5;
+  --danger: #c84b62;
+  --shadow: 0 18px 50px rgba(12, 30, 58, 0.1);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 0%, #ffffff 0, #ffffff 28%, transparent 55%),
+    radial-gradient(circle at 80% -8%, #dff1ff 0, #dff1ff 18%, transparent 42%),
+    linear-gradient(180deg, #edf3f9 0%, #e9eef5 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+.brand-title {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+pre {
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+  margin-top: 0;
+}
+
+.centered-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 8px;
+}
