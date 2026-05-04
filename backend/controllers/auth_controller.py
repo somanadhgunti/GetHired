@@ -93,7 +93,6 @@ def logout_user():
      Token blocklist can be added later via Redis.)
     """
     return jsonify({"message": "Logged out successfully."}), 200
-<<<<<<< HEAD
 
 
 @jwt_required()
@@ -123,5 +122,3 @@ def update_me():
         return jsonify({"error": str(e)}), 400
 
     return jsonify({"user": user, "message": "Account updated successfully."}), 200
-=======
->>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b

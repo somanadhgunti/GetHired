@@ -81,7 +81,6 @@ def get_user_by_id(user_id: str) -> dict | None:
         return None
     user = db["users"].find_one({"_id": oid})
     return serialize_user(user) if user else None
-<<<<<<< HEAD
 
 
 def update_user(user_id: str, data: dict) -> dict:
@@ -130,5 +129,3 @@ def update_user(user_id: str, data: dict) -> dict:
     if not user:
         raise ValueError("User not found.")
     return serialize_user(user)
-=======
->>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b

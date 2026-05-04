@@ -8,10 +8,7 @@ from bson.errors import InvalidId
 
 from database import get_db
 from models.worker_model import build_worker_profile, serialize_worker_profile, WORKER_TYPES
-<<<<<<< HEAD
 from models.job_model import serialize_job
-=======
->>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b
 
 
 def _sanitize_list(items):
@@ -110,7 +107,6 @@ def list_all(filters: dict) -> list:
 
     docs = db["profiles"].find(query).sort("created_at", -1).limit(50)
     return [serialize_worker_profile(d) for d in docs]
-<<<<<<< HEAD
 
 
 def list_saved_jobs(user_id: str) -> list:
@@ -169,5 +165,3 @@ def unsave_job(user_id: str, job_id: str) -> dict:
 
     result = db["saved_jobs"].delete_one({"user_id": oid, "job_id": job_oid})
     return {"saved": False, "job_id": job_id, "removed": result.deleted_count > 0}
-=======
->>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b

@@ -4,11 +4,7 @@ Job model.
 Collection: jobs
 Posted by employers. Supports individual and group applications.
 
-<<<<<<< HEAD
 Statuses: open → closed | cancelled (draft still supported for legacy/manual flows)
-=======
-Statuses: draft → open → closed | cancelled
->>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b
 """
 
 from datetime import datetime, timezone
@@ -40,11 +36,7 @@ def build_job(employer_id: ObjectId, data: dict) -> dict:
         "group_size_min":      data.get("group_size_min", None),    # min workers in group
         "group_size_max":      data.get("group_size_max", None),    # max workers in group
         "application_deadline": data.get("application_deadline", None),  # datetime | null
-<<<<<<< HEAD
         "status":              data.get("status", "open"),         # JOB_STATUSES
-=======
-        "status":              "draft",                             # JOB_STATUSES
->>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b
         "created_at":          now,
         "updated_at":          now,
     }

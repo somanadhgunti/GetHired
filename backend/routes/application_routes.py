@@ -29,7 +29,6 @@ def get_application(application_id):
     from controllers.application_controller import get_application_by_id
     return get_application_by_id(application_id)
 
-<<<<<<< HEAD
 
 # GET  /api/v1/applications/<application_id>/resume
 @application_bp.get("/<application_id>/resume")
@@ -37,8 +36,6 @@ def download_resume(application_id):
     from controllers.application_controller import download_application_resume
     return download_application_resume(application_id)
 
-=======
->>>>>>> 6c27ca74f19f73028bd42b31a94a3f04c004802b
 # ── Employer views ─────────────────────────────────────────
 # GET  /api/v1/applications/job/<job_id>
 @application_bp.get("/job/<job_id>")
